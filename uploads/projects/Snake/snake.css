@@ -1,0 +1,89 @@
+/*----------------------------初始化----------------------------*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    padding-top: 20px;
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
+    text-align: center;
+}
+
+/*----------------------------面板----------------------------*/
+.board {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    z-index: 999;
+    width: 800px;
+    margin-left: -400px;
+    text-align: center;
+}
+
+.board .info {
+    line-height: 30px;
+    margin: 100px 0;
+    color: white;
+    font-size: 20px;
+}
+
+.board .go {
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    border: none;
+    width: 240px;
+    height: 80px;
+    background-color: coral;
+}
+
+.board .go:hover {
+    transform: scale(1.1);
+}
+
+/*----------------------------画布----------------------------*/
+.map {
+    background-color: #333;
+}
+
+.gold {
+    opacity: 0;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    z-index: 1000;
+    color: yellow;
+    font-size: 40px;
+    transition: opacity 0.3s ease;
+}
+
+.gold-animation {
+    animation: rise 1s ease forwards;
+}
+
+@keyframes rise {
+    0% {
+        opacity: 0;
+        margin-top: 0;
+    }
+    40% {
+        opacity: 1;
+        margin-top: -10px;
+    }
+    60% {
+        opacity: 1;
+        margin-top: -10px;
+    }
+    100% {
+        opacity: 0;
+        margin-top: -10px;
+    }
+}
