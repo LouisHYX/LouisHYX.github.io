@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎试玩试玩。">
+<meta name="description" content="贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎试玩（PC版）。">
 <meta name="keywords" content="游戏">
 <meta property="og:type" content="article">
 <meta property="og:title" content="贪食蛇Demo版编程思路（原生JavaScript）">
 <meta property="og:url" content="http://yoursite.com/2019/06/20/贪食蛇Demo版/index.html">
 <meta property="og:site_name" content="宇轩的博客">
-<meta property="og:description" content="贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎试玩试玩。">
+<meta property="og:description" content="贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎试玩（PC版）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-22T03:10:43.161Z">
+<meta property="og:updated_time" content="2019-06-22T03:32:51.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="贪食蛇Demo版编程思路（原生JavaScript）">
-<meta name="twitter:description" content="贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎试玩试玩。">
+<meta name="twitter:description" content="贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎试玩（PC版）。">
 
 
 
@@ -330,13 +330,13 @@
       
 
       
-        <p>贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎<a href="/uploads/projects/Snake/snake.html">试玩</a><a href="uploads/projects/FlappyBird/FlappyBird.html">试玩</a>。<a id="more"></a></p>
+        <p>贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎<a href="/uploads/projects/Snake/snake.html">试玩</a>（PC版）。<a id="more"></a></p>
 <h1 id="游戏截图"><a href="#游戏截图" class="headerlink" title="游戏截图"></a>游戏截图</h1><p>我目的是要写一个Demo，只需实现这个游戏的主要逻辑，所以我没有使用任何美术资源，所有元素都是用代码编写的。</p>
 <hr>
 <h1 id="编写前的考虑"><a href="#编写前的考虑" class="headerlink" title="编写前的考虑"></a>编写前的考虑</h1><h2 id="用的什么软件？"><a href="#用的什么软件？" class="headerlink" title="用的什么软件？"></a>用的什么软件？</h2><p>我当时用的是WebStorm，因为自己比较顺手了。</p>
 <h2 id="JavaScript水平要达到什么程度才可以写一款简单的游戏？"><a href="#JavaScript水平要达到什么程度才可以写一款简单的游戏？" class="headerlink" title="JavaScript水平要达到什么程度才可以写一款简单的游戏？"></a>JavaScript水平要达到什么程度才可以写一款简单的游戏？</h2><p>只需要会写<code>function(){}</code>就可以。但是最好能理解对象，原型，继承，作用域这些知识。</p>
 <h2 id="要用到什么样的技术？"><a href="#要用到什么样的技术？" class="headerlink" title="要用到什么样的技术？"></a>要用到什么样的技术？</h2><p>最重要的就是<a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp" target="_blank" rel="noopener">canvas</a>了，他提供了丰富的绘图API。游戏角色、背景都是在canvas标签内实现的。</p>
-<h2 id="游戏中的角色要怎么动起来？"><a href="#游戏中的角色要怎么动起来？" class="headerlink" title="游戏中的角色要怎么动起来？"></a>游戏中的角色要怎么动起来？</h2><p>我当时使用的是<a href="http://www.w3school.com.cn/jsref/met_win_setinterval.asp" target="_blank" rel="noopener">setInterval()</a>函数实现，当然在后面的文章中我会提到一个更好的实现方式，就是采用<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame" target="_blank" rel="noopener">window.requestAnimationFrame()</a>函数，我目前正在编写的FlappyBird游戏就是使用这个方式并且引入了游戏引擎的概念，到时候再具体说这些方面的内容。</p>
+<h2 id="游戏中的角色要怎么动起来？"><a href="#游戏中的角色要怎么动起来？" class="headerlink" title="游戏中的角色要怎么动起来？"></a>游戏中的角色要怎么动起来？</h2><p>我当时使用的是<a href="http://www.w3school.com.cn/jsref/met_win_setinterval.asp" target="_blank" rel="noopener">setInterval()</a>函数实现，当然在后面的文章中我会提到一个更好的实现方式，就是采用<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame" target="_blank" rel="noopener">window.requestAnimationFrame()</a>函数，我目前正在编写的FlappyBird游戏就是使用这个方式，到时候再具体说这些方面的内容。</p>
 <hr>
 <h1 id="定好游戏元素"><a href="#定好游戏元素" class="headerlink" title="定好游戏元素"></a>定好游戏元素</h1><p>在写之前，我就定好了最终的成品是个什么样子，这个游戏需要几个角色，每个角色要怎么运动，我应该如何完成游戏，需要怎样操作等等。如果没有想好这些，我可能会非常痛苦，比如写到一半发现行不通，又得删掉重写。这个过程就把自己当成一个产品经理，要把游戏的大致框架定下来。<br>按正常的商业游戏来说，包含的内容非常丰富，但我作为个人兴趣编写，就没必要面面俱到了。</p>
 <h2 id="要有个开始界面"><a href="#要有个开始界面" class="headerlink" title="要有个开始界面"></a>要有个开始界面</h2><p>玩家一打开游戏，首先看见的应该是开始界面。<br>一个完善的开始界面可能包括：</p>
@@ -405,7 +405,7 @@
 <p>蛇光移动是不行的，他得有自己的活动范围。蛇如果碰到边界，游戏将会停止；蛇如果碰到自己的身体，游戏也会停止。另外，他还得吃食物，吃到了就会变长。<br>以上说的这些，就是游戏涉及到的又一个重要概念——碰撞检测。碰撞无处不在，试想一下：刀剑砍到怪物身上没有物理反馈，小球落地直接穿过地面没有弹起等等，如果物体与物体之间不存在相互作用，那么游戏将会变得十分奇怪与无聊。</p>
 <hr>
 <p>那么我这个Demo要怎么实现上述的一些碰撞呢？简单地想一下，如果蛇头与食物的位置重叠，是不是就可以证明蛇已经吃到食物了？那么这时候，我只要删掉这个食物，然后在蛇尾添加一个方块就行了。同理，如果蛇头的位置与边界或者自己身体中某一节的位置重叠，即可停止游戏显示结束界面了。大概意思就是：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(物体Ade位置 === 物体B的位置)&#123;</span><br><span class="line">    <span class="comment">//-------执行一系列的结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(物体A的位置 === 物体B的位置)&#123;</span><br><span class="line">    <span class="comment">//-------执行一系列的结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>由于我得需要他在整个游戏过程中都要进行判断，一旦符合条件就得执行结果，所以，将他放在move()函数中循环执行是不二选择。<br>代码实现如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//------------------------碰撞检测</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> posTail = sBody[sBody.length - <span class="number">1</span>];  <span class="comment">//原尾部位置</span></span><br><span class="line">    <span class="keyword">var</span> posHead = sBody[<span class="number">0</span>];  <span class="comment">//原头部位置</span></span><br><span class="line">    <span class="keyword">var</span> newHead = [];  <span class="comment">//新头部位置</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//-----------蛇的位置更新</span></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">//------------------------碰撞检测</span></span><br><span class="line">    <span class="keyword">if</span> (posHead.toString() === fBody.toString()) &#123;  <span class="comment">//是否吃到食物</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//------这里是其他的碰撞结果</span></span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">        snake.createBlock(posTail);</span><br><span class="line">        sBody.push(posTail);</span><br><span class="line">        food.createFood();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (sBody.concat([<span class="string">" "</span>]).join(<span class="string">" "</span>).split(<span class="string">" "</span> + [newHead[<span class="number">0</span>], newHead[<span class="number">1</span>]].toString() + <span class="string">" "</span>).length &gt; <span class="number">1</span>) &#123;  <span class="comment">//是否撞自己(判断sBody里面是否存在1处以上头部坐标)</span></span><br><span class="line">        showBoard();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (posHead[<span class="number">0</span>] === -SPACE || posHead[<span class="number">0</span>] === map.offsetWidth || posHead[<span class="number">1</span>] === -SPACE || posHead[<span class="number">1</span>] === map.offsetHeight) &#123;  <span class="comment">//是否撞墙</span></span><br><span class="line">        showBoard();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
