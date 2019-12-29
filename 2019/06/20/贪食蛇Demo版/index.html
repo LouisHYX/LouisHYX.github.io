@@ -53,13 +53,13 @@
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/images/ico.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/images/ico.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/images/ico.ico?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -80,14 +80,13 @@
 
 
 <meta name="description" content="贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎试玩（PC版）。 游戏截图我目的是要写一个Demo，只需实现这个游戏的主要逻辑，所以我没有使用任何美术资源，所有元素都是用代码编写的。">
-<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="贪食蛇Demo版编程思路（原生JavaScript）">
 <meta property="og:url" content="http://louishyx.github.io/2019/06/20/贪食蛇Demo版/index.html">
-<meta property="og:site_name" content="宇轩的博客">
+<meta property="og:site_name" content="万世浮华">
 <meta property="og:description" content="贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎试玩（PC版）。 游戏截图我目的是要写一个Demo，只需实现这个游戏的主要逻辑，所以我没有使用任何美术资源，所有元素都是用代码编写的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-29T04:02:27.831Z">
+<meta property="og:updated_time" content="2019-12-29T09:24:53.548Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="贪食蛇Demo版编程思路（原生JavaScript）">
 <meta name="twitter:description" content="贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎试玩（PC版）。 游戏截图我目的是要写一个Demo，只需实现这个游戏的主要逻辑，所以我没有使用任何美术资源，所有元素都是用代码编写的。">
@@ -126,7 +125,7 @@
 
 
 
-  <title>贪食蛇Demo版编程思路（原生JavaScript） | 宇轩的博客</title>
+  <title>贪食蛇Demo版编程思路（原生JavaScript） | 万世浮华</title>
   
 
 
@@ -166,7 +165,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">宇轩的博客</span>
+        <span class="site-title">万世浮华</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -201,12 +200,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
-            标签
+            分类
           </a>
         </li>
       
@@ -268,11 +267,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Louis Hu">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/uploads/avatar.png">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="宇轩的博客">
+      <meta itemprop="name" content="万世浮华">
     </span>
 
     
@@ -303,6 +302,39 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/代码/" itemprop="url" rel="index">
+                    <span itemprop="name">代码</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/代码/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -330,13 +362,13 @@
       
 
       
-        <p>贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎<a href="/uploads/projects/Snake/snake.html?_blank">试玩</a>（PC版）。</p>
-<h1 id="游戏截图"><a href="#游戏截图" class="headerlink" title="游戏截图"></a>游戏截图</h1><p>我目的是要写一个Demo，只需实现这个游戏的主要逻辑，所以我没有使用任何美术资源，所有元素都是用代码编写的。</p>
+        <p>贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎<a href="/uploads/projects/Snake/snake.html">试玩</a>（PC版）。</p>
+<h1 id="游戏截图"><a href="#游戏截图" class="headerlink" title="游戏截图"></a>游戏截图</h1><p><img src alt="截图"><br>我目的是要写一个Demo，只需实现这个游戏的主要逻辑，所以我没有使用任何美术资源，所有元素都是用代码编写的。</p>
 <hr>
 <h1 id="编写前的考虑"><a href="#编写前的考虑" class="headerlink" title="编写前的考虑"></a>编写前的考虑</h1><h2 id="用的什么软件？"><a href="#用的什么软件？" class="headerlink" title="用的什么软件？"></a>用的什么软件？</h2><p>我当时用的是WebStorm，因为自己比较顺手了。</p>
 <h2 id="JavaScript水平要达到什么程度才可以写一款简单的游戏？"><a href="#JavaScript水平要达到什么程度才可以写一款简单的游戏？" class="headerlink" title="JavaScript水平要达到什么程度才可以写一款简单的游戏？"></a>JavaScript水平要达到什么程度才可以写一款简单的游戏？</h2><p>只需要会写<code>function(){}</code>就可以。但是最好能理解对象，原型，继承，作用域这些知识。</p>
-<h2 id="要用到什么样的技术？"><a href="#要用到什么样的技术？" class="headerlink" title="要用到什么样的技术？"></a>要用到什么样的技术？</h2><p>最重要的就是<a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp?_blank" target="_blank" rel="noopener">canvas</a>标签了，他提供了丰富的绘图API。游戏角色、背景都是在canvas内实现的。</p>
-<h2 id="游戏中的角色要怎么动起来？"><a href="#游戏中的角色要怎么动起来？" class="headerlink" title="游戏中的角色要怎么动起来？"></a>游戏中的角色要怎么动起来？</h2><p>我当时使用的是<a href="http://www.w3school.com.cn/jsref/met_win_setinterval.asp?_blank" target="_blank" rel="noopener">setInterval()</a>函数实现，当然有一个更好的实现方式，就是采用<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame?_blank" target="_blank" rel="noopener">requestAnimationFrame()</a>函数，我目前正在编写的FlappyBird游戏就是使用这个方式。</p>
+<h2 id="要用到什么样的技术？"><a href="#要用到什么样的技术？" class="headerlink" title="要用到什么样的技术？"></a>要用到什么样的技术？</h2><p>最重要的就是<a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp" target="_blank" rel="noopener">canvas</a>标签了，他提供了丰富的绘图API。游戏角色、背景都是在canvas内实现的。</p>
+<h2 id="游戏中的角色要怎么动起来？"><a href="#游戏中的角色要怎么动起来？" class="headerlink" title="游戏中的角色要怎么动起来？"></a>游戏中的角色要怎么动起来？</h2><p>我当时使用的是<a href="http://www.w3school.com.cn/jsref/met_win_setinterval.asp" target="_blank" rel="noopener">setInterval()</a>函数实现，当然有一个更好的实现方式，就是采用<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame" target="_blank" rel="noopener">requestAnimationFrame()</a>函数，我目前正在编写的FlappyBird游戏就是使用这个方式。</p>
 <hr>
 <h1 id="定好游戏元素"><a href="#定好游戏元素" class="headerlink" title="定好游戏元素"></a>定好游戏元素</h1><p>在写之前，我就定好了最终的成品是个什么样子，这个游戏需要几个角色，每个角色要怎么运动，我应该如何完成游戏，需要怎样操作等等。如果没有想好这些，我可能会非常痛苦，比如写到一半发现行不通，又得删掉重写。这个过程就把自己当成一个产品经理，要把游戏的大致框架定下来。<br>按正常的商业游戏来说，包含的内容非常丰富，但我作为个人兴趣编写，就没必要面面俱到了。</p>
 <h2 id="要有个开始界面"><a href="#要有个开始界面" class="headerlink" title="要有个开始界面"></a>要有个开始界面</h2><p>玩家一打开游戏，首先看见的应该是开始界面。<br>一个完善的开始界面可能包括：</p>
@@ -461,12 +493,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i> JavaScript</a>
-          
-        </div>
-      
 
       
       
@@ -485,6 +511,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/29/博客历程/" rel="prev" title="博客历程">
+                博客历程 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -550,10 +580,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="Louis Hu">
+              <img class="site-author-image" itemprop="image" src="/uploads/images/avatar.png" alt="Louis Hu">
             
               <p class="site-author-name" itemprop="name">Louis Hu</p>
-              <p class="site-description motion-element" itemprop="description">稳健且低调的PhotoShop操作者</p>
+              <p class="site-description motion-element" itemprop="description">稳健且低调的Photoshoper</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -563,23 +593,23 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
-
-            
               
               
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">标签</span>
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
                 </a>
               </div>
+            
+
             
 
           </nav>
@@ -593,6 +623,12 @@
                     <a href="https://github.com/LouisHYX" target="_blank" title="GitHub">
                       
                         <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:790382461@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
                 
             </div>

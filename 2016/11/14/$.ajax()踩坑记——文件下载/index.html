@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="2019年6月中旬，离博客上一次大改版过去了快两年。当初使用ghost，其中一个原因是觉得颜值不错。但无奈，自己的生活成本越来越高，阿里云ECS越来越贵，所以打算将博客部署在免费的github上。由于使用hexo搭建非常方便，所以决定放弃ghost转投hexo。实际操作下来也确实节省时间，我只花了10分钟左右就已经成功把博客部署到了远端，然后再做了一些自己中意的修改。 挑选hexo主题作为一名设计">
+<meta name="description" content="首先要声明一下，我真的不怎么用jQuery。事情是这样的，我网站上的插件库版块有个下载的功能，之前我是直接在&amp;lt;a&amp;gt;标签上使用href属性链接到资源进行下载，但网上大神说这样把url暴露在页面上有些不安全啊…于是乎，我又开始搜寻更好的下载方法，最终找到如下代码： 12header (&quot;&quot;);readfile ($file);  简而言之，发送几个头信息，然后使用readfile()方法，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从ghost到hexo">
-<meta property="og:url" content="http://louishyx.github.io/2019/06/19/从ghost到hexo/index.html">
+<meta property="og:title" content="$.ajax()踩坑记——文件下载">
+<meta property="og:url" content="http://louishyx.github.io/2016/11/14/$.ajax()踩坑记——文件下载/index.html">
 <meta property="og:site_name" content="万世浮华">
-<meta property="og:description" content="2019年6月中旬，离博客上一次大改版过去了快两年。当初使用ghost，其中一个原因是觉得颜值不错。但无奈，自己的生活成本越来越高，阿里云ECS越来越贵，所以打算将博客部署在免费的github上。由于使用hexo搭建非常方便，所以决定放弃ghost转投hexo。实际操作下来也确实节省时间，我只花了10分钟左右就已经成功把博客部署到了远端，然后再做了一些自己中意的修改。 挑选hexo主题作为一名设计">
+<meta property="og:description" content="首先要声明一下，我真的不怎么用jQuery。事情是这样的，我网站上的插件库版块有个下载的功能，之前我是直接在&amp;lt;a&amp;gt;标签上使用href属性链接到资源进行下载，但网上大神说这样把url暴露在页面上有些不安全啊…于是乎，我又开始搜寻更好的下载方法，最终找到如下代码： 12header (&quot;&quot;);readfile ($file);  简而言之，发送几个头信息，然后使用readfile()方法，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-29T07:31:44.383Z">
+<meta property="og:image" content="http://louishyx.github.io/uploads/illustrations/excuseme.jpeg">
+<meta property="og:updated_time" content="2019-12-29T08:24:11.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从ghost到hexo">
-<meta name="twitter:description" content="2019年6月中旬，离博客上一次大改版过去了快两年。当初使用ghost，其中一个原因是觉得颜值不错。但无奈，自己的生活成本越来越高，阿里云ECS越来越贵，所以打算将博客部署在免费的github上。由于使用hexo搭建非常方便，所以决定放弃ghost转投hexo。实际操作下来也确实节省时间，我只花了10分钟左右就已经成功把博客部署到了远端，然后再做了一些自己中意的修改。 挑选hexo主题作为一名设计">
+<meta name="twitter:title" content="$.ajax()踩坑记——文件下载">
+<meta name="twitter:description" content="首先要声明一下，我真的不怎么用jQuery。事情是这样的，我网站上的插件库版块有个下载的功能，之前我是直接在&amp;lt;a&amp;gt;标签上使用href属性链接到资源进行下载，但网上大神说这样把url暴露在页面上有些不安全啊…于是乎，我又开始搜寻更好的下载方法，最终找到如下代码： 12header (&quot;&quot;);readfile ($file);  简而言之，发送几个头信息，然后使用readfile()方法，">
+<meta name="twitter:image" content="http://louishyx.github.io/uploads/illustrations/excuseme.jpeg">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://louishyx.github.io/2019/06/19/从ghost到hexo/">
+  <link rel="canonical" href="http://louishyx.github.io/2016/11/14/$.ajax()踩坑记——文件下载/">
 
 
 
 
 
-  <title>从ghost到hexo | 万世浮华</title>
+  <title>$.ajax()踩坑记——文件下载 | 万世浮华</title>
   
 
 
@@ -262,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://louishyx.github.io/2019/06/19/从ghost到hexo/">
+    <link itemprop="mainEntityOfPage" href="http://louishyx.github.io/2016/11/14/$.ajax()踩坑记——文件下载/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Louis Hu">
@@ -279,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">从ghost到hexo</h1>
+          <h1 class="post-title" itemprop="name headline">$.ajax()踩坑记——文件下载</h1>
         
 
         <div class="post-meta">
@@ -291,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-19T00:00:00+08:00">
-                2019-06-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-14T00:00:00+08:00">
+                2016-11-14
               </time>
             
 
@@ -314,8 +316,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/代码/" itemprop="url" rel="index">
+                    <span itemprop="name">代码</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/代码/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -351,12 +364,26 @@
       
 
       
-        <p>2019年6月中旬，离博客上一次大改版过去了快两年。<br>当初使用ghost，其中一个原因是觉得颜值不错。但无奈，自己的生活成本越来越高，阿里云ECS越来越贵，所以打算将博客部署在免费的github上。由于使用hexo搭建非常方便，所以决定放弃ghost转投hexo。实际操作下来也确实节省时间，我只花了10分钟左右就已经成功把博客部署到了远端，然后再做了一些自己中意的修改。</p>
-<h2 id="挑选hexo主题"><a href="#挑选hexo主题" class="headerlink" title="挑选hexo主题"></a>挑选hexo主题</h2><p>作为一名设计师，挑选一款合适的主题并不容易，不但要好看，而且需要易用、易修改、易扩展。从主题颜值的方面来说，我希望我的工作量尽量小，这就要求主题的大致风格，排版符合我的口味。从易用性上来说，主题必须很轻松地就能替换上去，而且有我所需要的一些基本功能。<br>最终我选用了<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">next</a>主题。</p>
-<h2 id="这次更新的大动作"><a href="#这次更新的大动作" class="headerlink" title="这次更新的大动作"></a>这次更新的大动作</h2><p>JavaScript的学习任重而道远，网上有句话：“想要真正学会一门语言，就用它去写一个游戏，哪怕是最简单的，也需要考虑很多很多方面”。我觉得有一定的道理，但目前游戏引擎已经十分成熟，制作一款游戏说不定已经沦为体力劳动。所以，我今年从引擎上着手，已开始重写FlappyBird这款游戏，目前游戏还在龟速编写中，但由于个人精力有限，并没有开发后台。<br>这次的重写并不是一拍脑门而为，之前我就已经完成了FlappyBird的Demo版，贪食蛇的Demo版，2048以及自己独创的一款游戏EnergyFirst。有了这些基础，我才希望写出更加完善的代码——运行更流畅，bug更少。</p>
-<h2 id="今后的学习方向"><a href="#今后的学习方向" class="headerlink" title="今后的学习方向"></a>今后的学习方向</h2><p>下半年的重心将从代码转移到手绘上来，也希望自己在未来的时间有更出色的设计作品。</p>
-<h2 id="会慢慢放弃更新？"><a href="#会慢慢放弃更新？" class="headerlink" title="会慢慢放弃更新？"></a>会慢慢放弃更新？</h2><p>暂时不会放弃博客。通过这样的经历，让我学到很多相关的知识，了解了之前从未涉足的领域。我很庆幸自己能一直保持着这样的激情。</p>
-<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>建站之路曲曲折折，感谢这一路走来亲朋好友的支持与帮助。</p>
+        <p>首先要声明一下，我真的不怎么用jQuery。<br>事情是这样的，我网站上的插件库版块有个下载的功能，之前我是直接在<code>&lt;a&gt;</code>标签上使用href属性链接到资源进行下载，但网上大神说这样把url暴露在页面上有些不安全啊…于是乎，我又开始搜寻更好的下载方法，最终找到如下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">header (<span class="string">""</span>);</span><br><span class="line">readfile ($file);</span><br></pre></td></tr></table></figure>
+
+<p>简而言之，发送几个头信息，然后使用readfile()方法，就可以读取并下载文件了。兴奋之余，赶紧着手搞起。</p>
+<p>首先！我利用jQuery的ajax()将插件id值传给后台进行处理：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    type: <span class="string">'POST'</span>,</span><br><span class="line">    url: url,</span><br><span class="line">    data: &#123;<span class="string">"id"</span>: id&#125;,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>之后！在控制器中我查询出插件路径，并使用readfile()读取文件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">header (<span class="string">"Content-Type: application/zip"</span>);</span><br><span class="line">header (<span class="string">"Content-Length: "</span> . filesize ($file));</span><br><span class="line">header (<span class="string">"Content-Disposition: attachment; filename=$plugin_name"</span>);</span><br><span class="line">readfile ($file);</span><br></pre></td></tr></table></figure>
+
+<p>最后！检验功能是否可用。我激动地点击下载按钮，然后······就没有然后了······<br>毫无反应！还给我在浏览器的Response里打印出一堆鸟语······</p>
+<img src="/uploads/illustrations/excuseme.jpeg" width="200" alt="what?!">
+
+<p>不应该啊？！网上很多解答都是这么做的哇。没办法，我抱着试一试的心态去问度娘，看看是readfile()用的不对？还是需要别的代码？折腾许久，仍然是一堆鸟语，就是不给我好好地下载。</p>
+<p>好！我服！于是我又利用href属性，将地址指向这个控制器，没想到奇迹发生了！居然开始下载了！我瞬间意识到：闹了半天，难不成是ajax()的问题？！</p>
+<p>在看完ajax()详细的参数介绍后，我终于找到了真相！其实这个方法返回的数据类型比较有限，不能将readfile()产生的文件流返回至页面上，所以没办法进行下载。</p>
+<p>最终我舍弃了ajax()，采用动态添加href的方式将id值get过去，并实现了这个功能。</p>
+<p>度娘上很多回答只考虑了控制器的代码，虽说方法没错，但如果有人跟我一样随手用ajax()进行异步传输，就难免会因为对该方法理解不多而踩坑。如今网上各种转载，但真心希望博主在转之前能有一个自己思考的过程，这对于提高信息质量很有帮助。</p>
+<p>转载容易，实践很难。我这锅也甩得飞起。</p>
+<p>我没折腾出来，怪我咯？！</p>
 
       
     </div>
@@ -377,7 +404,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://louishyx.github.io/2019/06/19/从ghost到hexo/" title="从ghost到hexo">http://louishyx.github.io/2019/06/19/从ghost到hexo/</a>
+    <a href="http://louishyx.github.io/2016/11/14/$.ajax()踩坑记——文件下载/" title="$.ajax()踩坑记——文件下载">http://louishyx.github.io/2016/11/14/$.ajax()踩坑记——文件下载/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -399,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/07/这是一个悲伤的故事/" rel="next" title="这是一个悲伤的故事">
-                <i class="fa fa-chevron-left"></i> 这是一个悲伤的故事
+              <a href="/2016/11/01/对于这个新冒出来的插件，我有些话说/" rel="next" title="对于这个新冒出来的插件，我有些话说">
+                <i class="fa fa-chevron-left"></i> 对于这个新冒出来的插件，我有些话说
               </a>
             
           </div>
@@ -409,8 +436,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/20/贪食蛇Demo版/" rel="prev" title="贪食蛇Demo版编程思路（原生JavaScript）">
-                贪食蛇Demo版编程思路（原生JavaScript） <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/01/我只是个PSer/" rel="prev" title="我只是个PSer">
+                我只是个PSer <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -463,17 +490,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -542,22 +560,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#挑选hexo主题"><span class="nav-number">1.</span> <span class="nav-text">挑选hexo主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这次更新的大动作"><span class="nav-number">2.</span> <span class="nav-text">这次更新的大动作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#今后的学习方向"><span class="nav-number">3.</span> <span class="nav-text">今后的学习方向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#会慢慢放弃更新？"><span class="nav-number">4.</span> <span class="nav-text">会慢慢放弃更新？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感谢"><span class="nav-number">5.</span> <span class="nav-text">感谢</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
