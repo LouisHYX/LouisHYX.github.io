@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="游戏,">
+  <meta name="keywords" content="JavaScript,">
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎试玩（PC版）。 游戏截图我目的是要写一个Demo，只需实现这个游戏的主要逻辑，所以我没有使用任何美术资源，所有元素都是用代码编写的。">
-<meta name="keywords" content="游戏">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="贪食蛇Demo版编程思路（原生JavaScript）">
 <meta property="og:url" content="http://louishyx.github.io/2019/06/20/贪食蛇Demo版/index.html">
 <meta property="og:site_name" content="宇轩的博客">
 <meta property="og:description" content="贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎试玩（PC版）。 游戏截图我目的是要写一个Demo，只需实现这个游戏的主要逻辑，所以我没有使用任何美术资源，所有元素都是用代码编写的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-21T12:39:22.418Z">
+<meta property="og:updated_time" content="2019-12-29T03:24:55.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="贪食蛇Demo版编程思路（原生JavaScript）">
 <meta name="twitter:description" content="贪食蛇应该都不陌生，玩法非常简单。我当时为了学习JavaScript，就尝试着写了一个。我之前还写过一个2048，不过当时水平非常有限，导致bug有点多就不介绍了。这个Demo算是真正意义上的自己编写的第一款游戏，完成于2016年12月，代码行数不到300，欢迎试玩（PC版）。 游戏截图我目的是要写一个Demo，只需实现这个游戏的主要逻辑，所以我没有使用任何美术资源，所有元素都是用代码编写的。">
@@ -396,8 +396,8 @@
 
 <p>我重新写了一个方法createFood()，其中有个限制条件就是不能让食物生成到蛇身上，我采用的方式是将sBody中的每一组位置以及食物的位置转换为String类型，如果两者相同则重新执行createFood()方法，重新生成新的位置。</p>
 <hr>
-<p>现在，主要角色都已经完成，接下来就要将会动的蛇添加进游戏循环。上文已经提到了循环的基本结构，但是其中的move()函数还没有添加内容。<br>我要如何更新蛇的数据？可以假设当前蛇正在向右移动，如图：</p>
-<p>要让蛇看起来正在移动，那么我就必须在头部的右侧添加一个方块，并删除掉尾部的方块，这样按一定的频率循环执行，即可达到目的。因此，每次调用move()函数，就对数组sBody执行添加删除操作，以此达到更新的目的。</p>
+<p>现在，主要角色都已经完成，接下来就要将会动的蛇添加进游戏循环。上文已经提到了循环的基本结构，但是其中的move()函数还没有添加内容。<br>我要如何更新蛇的数据？</p>
+<p>假设蛇正在向右移动，那么我就必须在头部的右侧添加一个方块，并删除掉尾部的方块，这样按一定的频率循环执行，即可达到目的。因此，每次调用move()函数，就对数组sBody执行添加删除操作，以此达到更新的目的。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 蛇移动一次的函数，每移动一格需要进行碰撞检测</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> posTail = sBody[sBody.length - <span class="number">1</span>];  <span class="comment">//原尾部位置</span></span><br><span class="line">    <span class="keyword">var</span> posHead = sBody[<span class="number">0</span>];  <span class="comment">//原头部位置</span></span><br><span class="line">    <span class="keyword">var</span> newHead = [];  <span class="comment">//新头部位置</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (dir) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"up"</span>:</span><br><span class="line">            newHead = [posHead[<span class="number">0</span>], posHead[<span class="number">1</span>] - SPACE];</span><br><span class="line">            snake.createBlock(newHead);</span><br><span class="line">            sBody.unshift(newHead);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"down"</span>:</span><br><span class="line">            newHead = [posHead[<span class="number">0</span>], posHead[<span class="number">1</span>] + SPACE];</span><br><span class="line">            snake.createBlock(newHead);</span><br><span class="line">            sBody.unshift(newHead);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"right"</span>:</span><br><span class="line">            newHead = [posHead[<span class="number">0</span>] + SPACE, posHead[<span class="number">1</span>]];</span><br><span class="line">            snake.createBlock(newHead);</span><br><span class="line">            sBody.unshift(newHead);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"left"</span>:</span><br><span class="line">            newHead = [posHead[<span class="number">0</span>] - SPACE, posHead[<span class="number">1</span>]];</span><br><span class="line">            snake.createBlock(newHead);</span><br><span class="line">            sBody.unshift(newHead);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//------------------------删除尾部</span></span><br><span class="line">    ctx.clearRect(posTail[<span class="number">0</span>], posTail[<span class="number">1</span>], SPACE, SPACE);</span><br><span class="line">    sBody.splice(sBody.length - <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//------------------------碰撞检测</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这段代码定义了三个变量，通过蛇头当前的位置以及移动方向，来确定要添加的方块的具体坐标，然后把新的方块放入数组sBody的第一个位置作为蛇头，再利用splice方法删掉末尾的方块及其索引。这样一来，当计时器moveTimer每次执行move()函数时，数组sBody中的值都会不同。至此，蛇的数值更新完成。</p>
@@ -463,7 +463,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/游戏/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i> 游戏</a>
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i> JavaScript</a>
           
         </div>
       
